@@ -1,0 +1,180 @@
+.main-bg-con{
+    width: 95vw;
+    background-color: rgb(20, 19, 19);
+    display: flex;
+}
+.display-users-list-bg-con{
+    height: 100%;
+    width: 65%;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+.displays-user-details-bg-con{
+    height: 100%;
+    width: 40%;
+    background-color: rgb(26, 26, 26);
+    padding: 0%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+.search-container{
+    height: 10%;
+    width: 100%;
+    background-color: antiquewhite;
+}
+.list-of-users-con{
+    width: 100%;
+    height: 100%;
+}
+.profile-hea-con{
+    height: 10%;
+    width: 100%;
+   
+}
+p5{
+    margin: 0px;
+}
+.profile-details-con{
+    height: 90%;
+    width: 100%;
+}
+
+.msg-btn{
+    border-radius: 3px;
+    color: white;
+    background-color: rgb(152, 90, 246);
+    border:none;
+    outline: none;
+    height: 40px;
+    width: 100px;
+}
+.profile-img-con{   
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.profile-img{
+    height: 200px;
+    border-radius: 15px;
+    width: 50%;
+
+}
+/* profile-css*/
+
+.username-p
+{
+    color: white;
+    font-size: 20px;
+}
+.job-p{
+    font-size: 14px;
+    color: aliceblue;
+}
+.h5{
+    font-size: 2rem;
+    color: whitesmoke;
+}
+.btn{
+    background-color: rgb(227, 222, 222);
+}
+.bio-h{
+    font-size: 14px;
+    color: rgb(185, 134, 240);
+    margin-top: 20px;
+    font-weight: bold;
+}
+.bio-p{
+    font-size: 12px;
+    color: rgb(224, 227, 229);
+}
+.names-p{
+    font-size: 13px;
+    color: rgb(198, 200, 201);
+}
+span{
+    font-size: 24px;
+}
+
+
+
+@media screen and (min-width:400px) and (max-width:667px){
+
+}
+
+@media screen and (min-width:667px) and (max-width:768px){
+
+}
+
+@media screen and (min-width:768px) and (max-width:1024px){
+    .msg-btn{
+        height: 30px;
+        width: 80px;
+        font-size: 10px;
+    }
+    .bio-h{
+        font-size: 13px;
+        margin-top: 3px;
+    }
+    .names-p{
+        font-size: 10px;
+    }
+    span{
+        font-size: 18px;
+    }
+  
+}
+
+
+@media screen and (max-width:768px){
+    .main-bg-con{
+        flex-direction: column-reverse;
+
+    }
+    .display-users-list-bg-con{
+        width: 100%;
+   
+        
+    }
+    .displays-user-details-bg-con{
+     
+        width: 100%;
+        height: 100vh;
+    }
+    input{
+        width:60%;
+    }
+    
+}
+
+@media screen and (min-width:768px){
+    .main-bg-con{
+        height: 100vh;
+
+    }
+    .display-users-list-bg-con{
+        padding: 0px;
+        padding-top: 30px;
+    }
+    .msg-btn{
+        height: 30px;
+        width: 100px;
+    }
+    .displays-user-details-bg-con{
+        padding: 5%;
+    }
+  
+}
+
+@media screen and (max-width:400px){
+ .msg-btn{
+    height: 30px;
+    width: 80px;
+    font-size: 10px;
+ }
+ span{
+    font-size: 17px;
+ }
+ 
+ 
+}

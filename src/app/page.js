@@ -1,7 +1,16 @@
+import './page.css'
+import Main from "./components/Main/page"
+import Header from "./components/Header/page"
 
 
-export default function Home(){
+export default  function Home(){
+ 
+  // -- returning ui --//
+
   return(
-    <h1>Home</h1>
+    <div className="bg-con">
+     <Header/>
+     <Main/>
+    </div>
   )
 }

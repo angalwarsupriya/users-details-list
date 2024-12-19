@@ -1,0 +1,41 @@
+.error-page-bg-con{
+    height: 100%;
+    width: 100%;
+}
+.error-img{
+    height: 70%;
+    width: 50%;
+}
+.error-msg{
+    font-size: 20px;
+    color: #e3e2e2;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width:768px){
+    .error-page-bg-con{
+       height: 90vh;
+       width: 100vw;
+    }
+    .error-msg{
+        font-size: 13px;
+    }
+    .error-img{
+        height: 50%;
+        width: 70%;
+    }
+   
+   }
+
+@media screen and (max-width:400px){
+
+    .error-msg{
+        font-size: 10px;
+    }
+    .error-img{
+        height: 60%;
+        width: 80%;
+    }
+
+}

@@ -1,0 +1,208 @@
+.users-details-list-bg-con{
+    height: 100%;
+    width: 100%;
+    padding: 2%;
+
+}
+ul{
+    height: 80%;
+    width: 100%;
+
+    list-style-type: none;
+    padding-left: 0px;
+    overflow-y: scroll;
+}
+li{
+    height:140px;
+    width: 90%;
+    margin-left: 0px;
+    margin-bottom: 20px;
+    border-bottom: 0.5px solid rgb(124, 123, 123);
+}
+.user-con{
+    height: 100%;
+    width: 80%;
+}
+.img-con{
+    height: 50%;
+    width: 14%;
+}
+.user-img{
+    height: 100%;
+    width:50%;
+    border-radius: 50%;
+    margin-left: 20%;
+}
+.job{
+    margin: 0px;
+    font-size: 1rem;
+    color: rgb(205, 201, 201);
+}
+.name-p{
+    margin: 0px;
+    font-size: 1.3rem;
+    color: #eceaea;
+}
+.search-con{
+    height: 20%;
+    width: 100%;
+}
+.search-icon-box{
+    height: 38px;
+    width: 40px;
+    border-top-right-radius:5px ;
+    border-bottom-right-radius: 5px;
+    border:0.5px solid wheat;
+}
+input{
+    height: 38px;
+    width: 450px;
+    background-color: transparent;
+    border:0.5px solid wheat;
+    border-top-left-radius:5px ;
+    border-bottom-left-radius: 5px;
+    outline: none;
+    padding-left: 5px;
+    color: rgb(173, 169, 169);
+    font-size: 18px;
+    font-weight: 500px;
+
+}
+.checkbox{
+    height: 25px;
+    width: 25px;
+}
+.icon{
+    color: white;
+    font-size: 20px;
+}
+h4{
+    color:rgb(184, 130, 238);
+}
+.p{
+    color: #adacac;
+}
+.add-use-btn{
+    height: 38px;
+    width: 100px;
+    background-color:rgb(187, 99, 245);;
+    border: none;
+    color: white;
+    font-size: 13px;
+    border-radius: 5px;
+}
+.row-box{
+    width: 100%;
+    padding-right: 5%;
+}
+
+
+
+
+
+
+
+@media screen and (min-width:667px) and (max-width:768px){
+    .img-con{
+        width: 15;
+        margin-right: 20px;
+    }
+    .user-img{
+        width: 100%;
+    }
+    
+}
+
+@media screen and (min-width:768px) and (max-width:1024px){
+
+}
+
+
+@media screen and (max-width:768px){
+    .main-bg-con{
+        flex-direction: column-reverse;
+
+    }
+    .display-users-list-bg-con{
+        width: 100%;
+   
+        
+    }
+    .displays-user-details-bg-con{
+     
+        width: 100%;
+        height: 100vh;
+    }
+    input{
+        width: 350px;
+        height: 30px;
+    }
+    .search-icon-box{
+        height: 30px;
+        width: 30px;
+
+    }
+    .add-use-btn{
+        height: 30px;
+        width: 80px;
+    }
+    h4{
+        font-size: 18px;
+    }
+    .p{
+        font-size: 13px;
+    }
+    li{
+        height: 100px;
+    }
+    .name-p{
+        font-size: 15px;
+    }
+    .job{
+        font-size: 10px;
+    }
+    .checkbox{
+        height: 20px;
+        width: 20px;
+        margin-right: 20px;
+    }
+}
+
+
+@media screen and (min-width:400px) and (max-width:667px){
+
+    input{
+       width:250px;
+    }
+    .add-use-btn{
+        width: 60px;
+        font-size: 10px;
+    }
+    .img-con{
+        width: 20%;
+        margin-right: 30px;
+    }
+    .user-img{
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width:400px){
+
+
+    .img-con{
+        width: 20%;
+        margin-right: 30px;
+    }
+    .user-img{
+        width: 100%;
+    }
+    input{
+        width: 170px;
+    };
+    .add-use-btn{
+        width: 50px;
+        font-size:5px ;
+    }
+}

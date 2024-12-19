@@ -1,12 +1,12 @@
 :root {
-  --background: #ffffff;
+  --background: #0b0b0b;
   --foreground: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #434242;
+    --foreground: #161515;
   }
 }
 
@@ -14,6 +14,8 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  font-family: Roboto;
+  background-color: #161515;
 }
 
 body {
