@@ -116,7 +116,7 @@ export default  function Main(){
             case 'Success':                   
                 return  userDetailsListDisplay()
             case 'Error':
-                return <ErrorPage fetchUser={fetchUser}/>
+                return <ErrorPage/>
             default:
                 null
         }
