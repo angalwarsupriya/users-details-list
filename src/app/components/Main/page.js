@@ -25,15 +25,17 @@ export default  function Main(){
     
     const [searchTitle, changeSearchTitle] = useState('')
     const [selectedUser, setSelectedUser] = useState(null);
+    const [avatarUrl, setAvatar]=useState('')
     const hideStatus = selectedUser !== null ? '' : 'none'
 
-
+    
      
    // -- USEEFFECT FOR FETCHING DATA AND SET PAGE STATUS BASED ON RESULT OF FETCH -- //
     
-   const handleCheckboxChange = (user, isChecked) => {
+   const handleCheckboxChange = (user, isChecked,avatarUrl) => {
     if (isChecked) {
         setSelectedUser(user);
+        setAvatar(avatarUrl)
     } else {
         setSelectedUser(null);
     }
@@ -44,8 +46,9 @@ export default  function Main(){
            try{
              const response = await fetch('https://602e7c2c4410730017c50b9d.mockapi.io/users')
              const data = await response.json()
+             const usersWithIds = data.map((user, index) => ({ ...user, id: index + 1 }));
              setPageStatus('Success')  
-             setUsersDetailsList(data)       
+             setUsersDetailsList(usersWithIds)       
             }catch{
                setPageStatus('Error')
             }
@@ -77,7 +80,7 @@ export default  function Main(){
                 <div className='search-con'>
                 <h4>Users Details</h4>
                 <p className='p'>Wellcome to our Web portal! where you can find the all informaion about users</p>
-                <div className='d-flex  justify-content-between row-box'>
+                <div className='row-box'>
                  <div className='d-flex'>
                     <input type='search' value={searchTitle} onChange={changesearch}/>
                     <div className='search-icon-box d-flex align-items-center justify-content-center'>
@@ -92,7 +95,7 @@ export default  function Main(){
             {filteredList.length > 0 ?
             <ul className='row'>
                 {filteredList.map((eachUser)=>(
-                  <UsersList eachUser={eachUser} handleCheckboxChange={handleCheckboxChange} />
+                  <UsersList eachUser={eachUser} handleCheckboxChange={handleCheckboxChange} key={eachUser.id}/>
                 ))}
             </ul>
             :
@@ -129,7 +132,7 @@ export default  function Main(){
 
 
 
-           <div className='displays-user-details-bg-con' d-flex flex-column style={{display:hideStatus}}>
+           <div className='displays-user-details-bg-con ' style={{display:hideStatus}}>
                
                 <div className='profile-hea-con d-flex justify-content-between align-items-center' style={{color:'white'}}>
                   <h5 style={{fontSize:'25px', margin:'0px'}} >Profile</h5>
@@ -146,7 +149,7 @@ export default  function Main(){
                     
                     <div className=''>
                         <div className='profile-img-con'>
-                        <img src={selectedUser.avatar} className='profile-img' alt={selectedUser.profile.username}/>
+                        <img src={avatarUrl} className='profile-img' alt={selectedUser.profile.username}/>
                         </div>
                         <div className='d-flex align-item-ceneter justify-content-between mt-5' style={{width:'100%'}}>
                             <div>
@@ -182,3 +185,5 @@ export default  function Main(){
         </main>
     )
 }
+
+

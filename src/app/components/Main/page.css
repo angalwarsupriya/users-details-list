@@ -97,7 +97,10 @@ span{
 }
 
 
-
+.row-box{
+    display: flex;
+    justify-content:space-between;
+}
 @media screen and (min-width:400px) and (max-width:667px){
 
 }
