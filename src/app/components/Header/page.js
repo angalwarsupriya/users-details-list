@@ -15,11 +15,14 @@ import { CiFlag1 } from "react-icons/ci";
 export default function Header() {
   return (
     <div className='header-bg-con'>
+      <div className='h-b'>
+        <img src='/images/rb_2149394336.png' alt='logo' className='logo'/>
       <div>
       <FiHome className='header-icon'></FiHome>
       <BsPeopleFill className='header-icon'></BsPeopleFill>
       <ImFilesEmpty className='header-icon'></ImFilesEmpty>
       <CiBellOn className='header-icon'></CiBellOn>
+      </div>
       </div>
       <div>
         <IoSettingsOutline className='header-icon'></IoSettingsOutline>

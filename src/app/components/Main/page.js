@@ -33,27 +33,30 @@ export default  function Main(){
    // -- USEEFFECT FOR FETCHING DATA AND SET PAGE STATUS BASED ON RESULT OF FETCH -- //
     
    const handleCheckboxChange = (user, isChecked,avatarUrl) => {
+    console.log('dddddddddd')
     if (isChecked) {
         setSelectedUser(user);
         setAvatar(avatarUrl)
     } else {
         setSelectedUser(null);
     }
-};
+};  
+   const fetchUser = async ()=>{
+    console.log('sssssss')
+    try{
+      const response = await fetch('https://602e7c2c4410730017c50b9d.mockapi.io/users')
+      const data = await response.json()
+      const usersWithIds = data.map((user, index) => ({ ...user, id: index + 1 }));
+      setPageStatus('Success')  
+      setUsersDetailsList(usersWithIds)       
+     }catch{
+        setPageStatus('Error')
+     }
+
+    }
 
     useEffect(()=>{
-        const fetchUser = async ()=>{
-           try{
-             const response = await fetch('https://602e7c2c4410730017c50b9d.mockapi.io/users')
-             const data = await response.json()
-             const usersWithIds = data.map((user, index) => ({ ...user, id: index + 1 }));
-             setPageStatus('Success')  
-             setUsersDetailsList(usersWithIds)       
-            }catch{
-               setPageStatus('Error')
-            }
-
-        }
+      
         fetchUser()
     },[]);
        
@@ -93,7 +96,7 @@ export default  function Main(){
                  </div>
             </div>
             {filteredList.length > 0 ?
-            <ul className='row'>
+            <ul className='row pt-4'>
                 {filteredList.map((eachUser)=>(
                   <UsersList eachUser={eachUser} handleCheckboxChange={handleCheckboxChange} key={eachUser.id}/>
                 ))}
@@ -109,11 +112,11 @@ export default  function Main(){
     function displayBasedOnPageStatus(){
         switch (pageStatus){
             case 'Loading' :
-                return <Loading/>
-            case 'Success':
-                return userDetailsListDisplay()
+                return <Loading />
+            case 'Success':                   
+                return  userDetailsListDisplay()
             case 'Error':
-                return <ErrorPage/>
+                return <ErrorPage fetchUser={fetchUser}/>
             default:
                 null
         }
@@ -124,7 +127,6 @@ export default  function Main(){
     return(
         <main className='main-bg-con'>         
             <div className='display-users-list-bg-con'>
-               <div className='search-containe'></div>
                 <div className='list-of-users-con'>
                   {displayBasedOnPageStatus()}
                 </div>
@@ -136,7 +138,7 @@ export default  function Main(){
                
                 <div className='profile-hea-con d-flex justify-content-between align-items-center' style={{color:'white'}}>
                   <h5 style={{fontSize:'25px', margin:'0px'}} >Profile</h5>
-                  <button style={{color:'white', border:'none', backgroundColor:'transparent'}}>
+                  <button style={{color:'white', border:'none', backgroundColor:'transparent'}} onClick={()=>handleCheckboxChange({}, null, '')}>
                     <IoMdClose className='wrong-Icon'/>
                   </button>         
                      
@@ -160,7 +162,7 @@ export default  function Main(){
                         </div>
                         
                         <h6 className='bio-h'>Bio</h6>
-                        <p className='bio-p'>{selectedUser.Bio} iam a frontend developer, how can i help you tell plesase. my father name is satyanarayana.</p>
+                        <p className='bio-p'>{selectedUser.Bio}</p>
                         <h6 className='bio-h'>First-name</h6>
                         <p className='names-p'>{selectedUser.profile.firstName}</p>
                         <h6 className='bio-h'>Last-name</h6>
